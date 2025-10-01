@@ -42,7 +42,7 @@
 
         <div
           id="mob-nav"
-          class="absolute z-20 -top-[1000px] transition-all duration-500 left-0 w-full bg-white flex justify-between"
+          class="absolute z-50 -top-[1000px] transition-all duration-500 left-0 w-full bg-white flex justify-between"
         >
           <ul class="flex flex-col gap-4 px-5 py-8 list-none w-full">
             <li class="cursor-pointer text-lg font-medium">Home</li>
@@ -77,9 +77,14 @@
               Your Resume<br />
               <span class="text-[#FA1239] relative">
                 Deserves A Yes
-                <img src="assets/lines.png" alt="" class="absolute -bottom-2 md:-bottom-3 scale-[.8] md:scale-[0.9] -left-5" />
+                <img
+                  src="assets/lines.png"
+                  alt=""
+                  class="absolute -bottom-2 md:-bottom-3 scale-[.8] md:scale-[0.9] -left-5"
+                />
               </span>
-              Let’s <br/> Make It Happen
+              Let’s <br />
+              Make It Happen
             </h1>
             <p class="text-medium max-w-lg tracking-wide text-sm sm:text-base">
               If Your Resume Isn’t Getting Responses, It’s Time For An Upgrade.
@@ -193,10 +198,10 @@
       const menu_icon = document.getElementById("mob-menu");
       const mob_nav = document.getElementById("mob-nav");
       if (menu_icon.src?.includes("menu.svg")) {
-        menu_icon.src = "/assets/close.svg";
+        menu_icon.src = "assets/close.svg";
         mob_nav.style.top = "5rem";
       } else {
-        menu_icon.src = "/assets/menu.svg";
+        menu_icon.src = "assets/menu.svg";
         mob_nav.style.top = "-1000px";
       }
     }
