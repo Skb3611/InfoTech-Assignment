@@ -1,96 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Document</title>
-</head>
-<body>
-   <header>
-    <nav class="flex justify-between items-center mx-25 my-3">
-        <div class="logo flex items-center gap-2 ">
-            <img src="assets/logo.png" alt="logo">
-            <div class="flex flex-col -space-y-2">
-                <span class="text-extrabold text-2xl">COMPANY</span>
-                <span class="text-thin ">business tagline</span>
+  </head>
+
+  <body>
+    <header>
+      <nav class="flex justify-between items-center md:mx-25 mx-2 my-3">
+        <div class="logo flex items-center gap-2">
+          <img src="assets/logo.png" alt="logo" />
+          <div class="flex flex-col -space-y-2">
+            <span class="text-extrabold text-lg sm:text-2xl">COMPANY</span>
+            <span class="text-thin text-xs sm:text-base">business tagline</span>
+          </div>
+        </div>
+        <div class="menu hidden lg:block">
+          <ul class="flex gap-12 list-none">
+            <li class="cursor-pointer">Home</li>
+            <li class="cursor-pointer">About Us</li>
+            <li class="cursor-pointer">Our Services</li>
+            <li class="cursor-pointer">Pricing</li>
+            <li class="cursor-pointer">FAQ</li>
+          </ul>
+        </div>
+        <div class="hidden lg:block">
+          <button
+            class="cursor-pointer bg-[#FA1239] text-white px-5 py-2.5 rounded-full shadow-[0_4px_10px_rgb(0,0,0,0.25)]"
+          >
+            Get A Quote
+          </button>
+        </div>
+        <button
+          onclick="handleClick()"
+          class="w-10 h-10 lg:hidden cursor-pointer"
+        >
+          <img src="assets/menu.svg" alt="" class="size-6" id="mob-menu" />
+        </button>
+
+        <div
+          id="mob-nav"
+          class="absolute -top-[1000px] transition-all duration-500 left-0 w-full bg-white flex justify-between"
+        >
+          <ul class="flex flex-col gap-4 px-5 py-8 list-none w-full">
+            <li class="cursor-pointer text-lg font-medium">Home</li>
+            <li class="cursor-pointer text-lg font-medium">About Us</li>
+            <li class="cursor-pointer text-lg font-medium">Our Services</li>
+            <li class="cursor-pointer text-lg font-medium">Pricing</li>
+            <li class="cursor-pointer text-lg font-medium">FAQ</li>
+            <li class="w-full flex justify-center items-center">
+              <button
+                class="cursor-pointer bg-[#FA1239] text-white px-5 py-2.5 rounded-full shadow-[0_4px_10px_rgb(0,0,0,0.25)]"
+              >
+                Get A Quote
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div
+        class="min-h-[88dvh] bg-linear-to-bl from-[#FFE7EB] to-[#FFBFCA] pt-9"
+      >
+        <div
+          class="flex flex-col lg:flex-row h-full justify-between md:items-center md:mx-20 gap-10 xl:gap-0"
+        >
+          <div
+            class="h-full mx-5 sm:mx-10 xl:w-1/2 space-y-4 md:space-y-8 max-w-2xl"
+          >
+            <h1
+              class="text-3xl sm:text-3xl md:text-5xl xl:text-6xl leading-10 md:leading-16 xl:leading-20 font-bold xl:max-w-2xl lg:tracking-tight"
+            >
+              Your Resume<br />
+              <span class="text-[#FA1239] relative">
+                Deserves A Yes
+                <img src="assets/lines.png" alt="" class="absolute -bottom-2 md:-bottom-3 scale-[.8] md:scale-[0.9] -left-5" />
+              </span>
+              Let’s <br/> Make It Happen
+            </h1>
+            <p class="text-medium max-w-lg tracking-wide text-sm sm:text-base">
+              If Your Resume Isn’t Getting Responses, It’s Time For An Upgrade.
+              Get An ATS-Optimized Resume Crafted By HR Experts To Help You Land
+              More Interviews. Our Resumes Are Designed To Get Your Foot In The
+              Door And Place Your Name At The Top Of The Shortlist.
+            </p>
+            <div class="btns space-y-2 sm:flex sm:gap-3 sm:space-y-0">
+              <button
+                class="cursor-pointer font-medium text-[#FA1239] bg-white border border-[#FA1239] shadow-[#FA1239] shadow-sm px-4 py-2 rounded-full w-full text-sm sm:text-base xl:w-1/3"
+              >
+                RESUME PACKAGE
+              </button>
+              <button
+                class="cursor-pointer px-4 py-2 rounded-full bg-[#FA1239] text-white shadow-sm w-full text-sm sm:text-base xl:w-1/3"
+              >
+                CONTACT US
+              </button>
             </div>
+          </div>
+          <div
+            class="h-full lg:w-[40%] mx-4 md:mx-0 flex justify-center items-center"
+          >
+            <img
+              src="assets/hero.png"
+              alt="hero-image"
+              class="sm:w-1/2 lg:w-full"
+            />
+          </div>
         </div>
-        <div class="menu">
-            <ul class="flex gap-12 list-none">
-                <li class="cursor-pointer">Home</li>
-                <li class="cursor-pointer">About Us</li>
-                <li class="cursor-pointer">Our Services</li>
-                <li class="cursor-pointer">Pricing</li>
-                <li class="cursor-pointer">FAQ</li>
-        </div>
-        <div>
-            <button class="cursor-pointer bg-[#FA1239] text-white px-5 py-2.5 rounded-full shadow-xl shadow-[#FA1239]/20">Get A Quote</button>
-        </div>
-    </nav>
-   </header>
-   <main>
-    <div class="min-h-[88dvh] bg-linear-to-bl from-[#FFE7EB] to-[#FFBFCA] pt-9">
-        <div class="flex h-full justify-between items-center mx-20">
-            <div class="h-full ml-20 w-1/2 space-y-8 ">
-               <h1 class="text-6xl leading-18 font-bold max-w-2xl ">Your Resume<br/> <span class="text-[#FA1239]">Deserves a Yes</span> Let’s Make It Happen</h1>
-               <p class="text-medium max-w-lg tracking-wide">If Your Resume Isn’t Getting Responses, It’s Time For An Upgrade. Get An ATS-Optimized Resume Crafted By HR Experts To Help You Land More Interviews. Our Resumes Are Designed To Get Your Foot In The Door And Place Your Name At The Top Of The Shortlist.</p>
-               <div class="btns space-x-2">
-                <button class="cursor-pointer font-medium text-[#FA1239] bg-white border border-[#FA1239] shadow-[#FA1239] shadow-sm px-4 py-2  rounded-full">RESUME PACKAGE</button>
-                <button class="cursor-pointer px-4 py-2 rounded-full bg-[#FA1239] text-white shadow-sm">CONTACT US</button>
-               </div>
-            </div>
-            <div class=" h-full w-[40%]">
-                <img src="assets/hero.png" alt="hero-image" class=" ">
-            </div>
-        </div>
-    </div>
-    <div class="py-14 mx-20 flex flex-col justify-center">
+      </div>
+      <div class="py-14 mx-8 md:mx-20 flex flex-col justify-center">
         <div class="flex flex-col justify-center items-center gap-4 mb-8">
-            <span class="bg-[#FD92A4]/30 py-2 px-3 font-medium">What You Get</span>
-            <h3 class="text-xl font-semibold">
-            You’re Not Just Another Applicant And Your Resume Shouldn't Look Like One
-            </h3>
+          <span class="bg-[#FD92A4]/30 py-2 px-3 font-medium"
+            >What You Get</span
+          >
+          <h3 class="sm:text-xl text-center font-semibold">
+            You’re Not Just Another Applicant And Your Resume Shouldn't Look
+            Like One
+          </h3>
         </div>
-        <div class="grid grid-cols-4 gap-5 mx-20 my-10">
-            <div class="flex flex-col justify-start items-center px-3 py-10 gap-4 shadow-[0_3px_8px_rgb(0,0,0,0.1)] rounded-2xl">
-                <div class="head flex flex-col items-center justify-center">
-                    <img src="assets/card1.png" alt="">
-                </div>
-                <div class="space-y-2">
-                    <p class="text-lg font-medium ">A Resume That Passes ATS Filters</p>
-                    <span>Get a professionally written, keyword-optimized resume that lands in recruiter inboxes—not rejection piles.</span>
-                </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:mx-10 my-10"
+        >
+          <div
+            class="flex flex-col justify-start items-center px-3 py-10 gap-4 shadow-[0_3px_8px_rgb(0,0,0,0.1)] rounded-2xl"
+          >
+            <div class="head flex flex-col items-center justify-center">
+              <img src="assets/card1.png" alt="" />
             </div>
-            <div class="flex flex-col justify-start items-center px-3 py-10 gap-4 shadow-[0_3px_8px_rgb(0,0,0,0.1)] rounded-2xl">
-                <div class="head flex flex-col items-center justify-center">
-                    <img src="assets/card2.png" alt="">
-                </div>
-                <div class="space-y-2">
-                    <p class="text-lg font-medium ">A Cover Letter That Gets Read</p>
-                    <span>Stand out with a cover letter that speaks directly to the role and reflects your strengths.</span>
-                </div>
+            <div class="space-y-2">
+              <p class="text-lg font-medium">
+                A Resume That Passes ATS Filters
+              </p>
+              <span
+                >Get a professionally written, keyword-optimized resume that
+                lands in recruiter inboxes—not rejection piles.</span
+              >
             </div>
-            <div class="flex flex-col justify-start items-center px-3 py-10 gap-4 shadow-[0_3px_8px_rgb(0,0,0,0.1)] rounded-2xl">
-                <div class="head flex flex-col items-center justify-center">
-                    <img src="assets/card3.png" alt="">
-                </div>
-                <div class="space-y-2">
-                    <p class="text-lg font-medium ">A LinkedIn Profile That Works For You</p>
-                    <span>Attract the right eyes, start conversations, and show up in recruiter searches.</span>
-                </div>
+          </div>
+          <div
+            class="flex flex-col justify-start items-center px-3 py-10 gap-4 shadow-[0_3px_8px_rgb(0,0,0,0.1)] rounded-2xl"
+          >
+            <div class="head flex flex-col items-center justify-center">
+              <img src="assets/card2.png" alt="" />
             </div>
-            <div class="flex flex-col justify-start items-center px-3 py-10 gap-4 shadow-[0_3px_8px_rgb(0,0,0,0.1)] rounded-2xl">
-                <div class="head flex flex-col items-center justify-center">
-                    <img src="assets/card4.png" alt="">
-                </div>
-                <div class="space-y-2">
-                    <p class="text-lg font-medium ">Interview Confidence</p>
-                    <span>Interview preperation with real HR professionals so you speak clearly,confidently, and convincingly.</span>
-                </div>
+            <div class="space-y-2">
+              <p class="text-lg font-medium">A Cover Letter That Gets Read</p>
+              <span
+                >Stand out with a cover letter that speaks directly to the role
+                and reflects your strengths.</span
+              >
             </div>
+          </div>
+          <div
+            class="flex flex-col justify-start items-center px-3 py-10 gap-4 shadow-[0_3px_8px_rgb(0,0,0,0.1)] rounded-2xl"
+          >
+            <div class="head flex flex-col items-center justify-center">
+              <img src="assets/card3.png" alt="" />
+            </div>
+            <div class="space-y-2">
+              <p class="text-lg font-medium">
+                A LinkedIn Profile That Works For You
+              </p>
+              <span
+                >Attract the right eyes, start conversations, and show up in
+                recruiter searches.</span
+              >
+            </div>
+          </div>
+          <div
+            class="flex flex-col justify-start items-center px-3 py-10 gap-4 shadow-[0_3px_8px_rgb(0,0,0,0.1)] rounded-2xl"
+          >
+            <div class="head flex flex-col items-center justify-center">
+              <img src="assets/card4.png" alt="" />
+            </div>
+            <div class="space-y-2">
+              <p class="text-lg font-medium">Interview Confidence</p>
+              <span
+                >Interview preperation with real HR professionals so you speak
+                clearly,confidently, and convincingly.</span
+              >
+            </div>
+          </div>
         </div>
-    </div>
-   </main>
-</body>
+      </div>
+    </main>
+  </body>
+  <script>
+    function handleClick() {
+      const menu_icon = document.getElementById("mob-menu");
+      const mob_nav = document.getElementById("mob-nav");
+      if (menu_icon.src?.includes("menu.svg")) {
+        menu_icon.src = "/assets/close.svg";
+        mob_nav.style.top = "5rem";
+      } else {
+        menu_icon.src = "/assets/menu.svg";
+        mob_nav.style.top = "-1000px";
+      }
+    }
+  </script>
 </html>
